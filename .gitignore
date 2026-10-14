@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+.wrangler/
+.dev.vars*
+.env*
+!.env.example
+!.dev.vars.example
+*.tsbuildinfo
+output/
+.playwright-mcp/
+.DS_Store
+.npm-cache/

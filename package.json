@@ -1,0 +1,32 @@
+{
+  "name": "tri-shail",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack --hostname 127.0.0.1",
+    "build": "next build --webpack",
+    "preview": "wrangler dev --port 8787",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "db:local": "wrangler d1 migrations apply tri-shail-enquiries --local",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "gsap": "3.15.0",
+    "next": "16.4.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "latest",
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^25.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "sharp": "^0.34.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.9.0",
+    "wrangler": "4.151.0"
+  },
+  "type": "module"
+}

@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/media/barlow-0.woff2') format('woff2');
+  unicode-range: U+20-21, U+26, U+2c-3b, U+3f, U+41-5a, U+61-7a;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/media/barlow-1.woff2') format('woff2');
+  unicode-range: U+20-21, U+26, U+2c-3b, U+3f, U+41-5a, U+61-7a;
+}
