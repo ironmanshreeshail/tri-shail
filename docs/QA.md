@@ -2,7 +2,9 @@
 
 ## Coach branding revision — 15 October 2026
 
-The current deployed website is preserved in GitHub commit `761cd53` on `master`. The branding revision is local and saved separately on `codex/coach-branding`; these checks do not imply it has been deployed.
+The previous website is preserved in GitHub commit `761cd53`. The branding revision (`3825969`) was deployed on 15 October 2026 and included on `master`. Cloudflare version: `60413282-1959-4d8d-8af2-51251ce70a69`.
+
+Post-deployment browser checks confirmed the updated page title, prominent coach name, authentic hero portrait, all three animated photo chapters with matching navigation, and no horizontal overflow at 390×844. Privacy and credits return 200; GET `/api/enquiries` returns the expected 405. The same existing D1 binding was retained, with no schema or backend-code changes. The live form was not resubmitted for this visual update; the prior production persistence verification remains documented below. Search indexing remains disabled.
 
 - Production build and TypeScript compilation pass. The eight existing backend tests passed when saving the deployed checkpoint; this revision does not change the backend.
 - Shreeshail’s authentic running portrait replaces the stock hero. His swim, bike, and run photos replace the three cinematic scenes. His name is prominent in the opening and biography, and a face portrait replaces the enquiry initials.

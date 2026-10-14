@@ -4,7 +4,7 @@ A responsive triathlon coaching website with a cinematic swim → bike → run s
 
 Hosted review version: [tri-shail.ironman-shreeshail.workers.dev](https://tri-shail.ironman-shreeshail.workers.dev/). Cloudflare Free hosting and the production D1 database are connected. Search indexing is disabled pending final content and privacy-policy details.
 
-The deployed design is backed up in commit `761cd53` on `master`. The coach branding revision is on `codex/coach-branding` and can be reviewed locally at `http://localhost:8787`; it has not yet been deployed. GitHub remote: `git@github.com:ironmanshreeshail/tri-shail.git`.
+The coach branding revision (`3825969`) was deployed on 15 October 2026 and is included on `master`. The previous design is preserved in commit `761cd53`. GitHub remote: `git@github.com:ironmanshreeshail/tri-shail.git`.
 
 ## Local preview with a working backend
 

@@ -4,6 +4,8 @@
 
 Cloudflare was connected on 14 October 2026 after the user created an account and authorised Wrangler. The hosted review version is https://tri-shail.ironman-shreeshail.workers.dev/. The production Worker is `tri-shail`; its D1 database is `tri-shail-enquiries`, created in APAC. The account and database IDs are configured in `wrangler.jsonc`.
 
+The coach branding revision from Git commit `3825969` was deployed on 15 October 2026. Cloudflare version: `60413282-1959-4d8d-8af2-51251ce70a69`. `master` includes the deployed revision; the original design remains recoverable at `761cd53`. The live opening, all three coach photo chapters and navigation, privacy/credits pages, and API method protection were checked after deployment.
+
 The production schema and rate-limit secret are installed. A browser enquiry was verified in the remote database, then removed. The main `workers.dev` URL is enabled; extra version-preview URLs are disabled. Hosting uses the Free plan's default CPU allowance; do not add a custom `limits.cpu_ms` setting, which Cloudflare rejects on Free.
 
 For ordinary updates, use `npm run deploy`. The initial setup below is already complete; do not repeat database creation for an existing deployment. Git-connected automatic deployment is not configured yet.
