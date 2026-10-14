@@ -6,6 +6,8 @@ Hosted review version: [tri-shail.ironman-shreeshail.workers.dev](https://tri-sh
 
 The coach branding revision (`3825969`) was deployed on 15 October 2026 and is included on `master`. The previous design is preserved in commit `761cd53`. GitHub remote: `git@github.com:ironmanshreeshail/tri-shail.git`.
 
+The latest deployment also includes the compact-mobile cinematic correction (`2c01d83`). The 480 px height threshold supports smaller iPhone viewports, while reduced-motion users see readable static chapters and a clear status label.
+
 ## Local preview with a working backend
 
 Use Node.js 22.13+ (Node 24 LTS recommended) and npm.

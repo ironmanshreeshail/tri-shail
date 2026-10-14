@@ -6,6 +6,8 @@ Cloudflare was connected on 14 October 2026 after the user created an account an
 
 The coach branding revision from Git commit `3825969` was deployed on 15 October 2026. Cloudflare version: `60413282-1959-4d8d-8af2-51251ce70a69`. `master` includes the deployed revision; the original design remains recoverable at `761cd53`. The live opening, all three coach photo chapters and navigation, privacy/credits pages, and API method protection were checked after deployment.
 
+The compact-mobile cinematic correction (`2c01d83`) was subsequently deployed on 15 October 2026 as Cloudflare version `ba9de95d-6fd1-4f41-8fd4-6a8d69425b4a`, and included on `master`. Cinematic mode supports viewport heights from 480 px; shorter screens use flowing chapters. Reduced motion remains respected and is now labelled in the story. WebKit tests run with `npm run test:browser` against a running preview; `TRISHAIL_TEST_URL` can target the live deployment.
+
 The production schema and rate-limit secret are installed. A browser enquiry was verified in the remote database, then removed. The main `workers.dev` URL is enabled; extra version-preview URLs are disabled. Hosting uses the Free plan's default CPU allowance; do not add a custom `limits.cpu_ms` setting, which Cloudflare rejects on Free.
 
 For ordinary updates, use `npm run deploy`. The initial setup below is already complete; do not repeat database creation for an existing deployment. Git-connected automatic deployment is not configured yet.
