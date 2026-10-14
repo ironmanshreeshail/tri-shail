@@ -12,12 +12,18 @@ export default function Credits() {
         <span className="eyebrow">THE PEOPLE BEHIND THE PICTURES</span>
         <h1>IN GOOD LIGHT.</h1>
         <p className="document-lead">
-          Sport photography brings this journey to life.
+          The opening portrait, swim, bike, run journey, and coach section show
+          Shreeshail Janagond in photographs supplied for this website.
+        </p>
+        <h2>Programme photography</h2>
+        <p>
+          The programme cards use illustrative sport photographs from these
+          photographers:
         </p>
         <ul className="credits-list">
           <li>
             <a href="https://unsplash.com/photos/person-running-on-road-at-daytime-QVD3Xht9txA">
-              Opening photograph — Andrea Leopardi
+              Mountain running — Andrea Leopardi
             </a>
           </li>
           <li>
@@ -39,8 +45,7 @@ export default function Credits() {
         <p>
           These illustrative sport photographs are used under the{" "}
           <a href="https://unsplash.com/license">Unsplash License</a>. They do
-          not depict coach Shreeshail or his athletes. The coach poster was
-          supplied for this website.
+          not depict coach Shreeshail or his athletes.
         </p>
       </main>
     </>

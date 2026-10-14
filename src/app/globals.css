@@ -246,27 +246,30 @@ p {
   max-height: 1250px;
   position: relative;
   overflow: hidden;
-  background: #222d2f;
+  background: #171d19;
   color: var(--paper);
 }
 .hero-image {
+  position: absolute;
+  top: 0;
+  right: 0;
   height: 100%;
-  width: 100%;
+  width: 50%;
   object-fit: cover;
-  object-position: 50% 53%;
+  object-position: 50% 30%;
 }
 .hero-shade {
   position: absolute;
   inset: 0;
   background:
+    linear-gradient(90deg, #171d19 50%, #171d19e6 54%, #171d1900 72%),
     linear-gradient(
       180deg,
-      #09120c70 0%,
-      #08130b04 30%,
-      #0a110955 53%,
-      #0a100ce8 100%
-    ),
-    linear-gradient(90deg, #09130c25, transparent);
+      #171d1955,
+      transparent 30%,
+      #171d1933 68%,
+      #171d19 100%
+    );
 }
 .hero-topline {
   position: absolute;
@@ -295,21 +298,28 @@ p {
 }
 .hero-content {
   position: absolute;
-  bottom: 130px;
+  bottom: 140px;
   left: max(5.5vw, 24px);
-  right: max(5.5vw, 24px);
+  width: 54%;
   display: grid;
-  grid-template-columns: 1.8fr 1fr;
-  gap: 30px;
-  align-items: end;
+  grid-template-columns: 1fr;
+  gap: 26px;
 }
 .hero-pretitle {
   font-size: 10px;
   letter-spacing: 0.16em;
-  margin-bottom: 18px;
+  margin-bottom: 6px;
+  color: #d2d8cc;
+}
+.hero-coach-name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(32px, 3.8vw, 60px);
+  line-height: 1.1;
+  margin-bottom: 25px;
 }
 .hero h1 {
-  font-size: clamp(95px, 10.7vw, 180px);
+  font-size: clamp(90px, 10vw, 165px);
   letter-spacing: -0.01em;
   line-height: 0.88;
 }
@@ -318,20 +328,24 @@ p {
 }
 .hero-aside {
   padding-bottom: 4px;
-  max-width: 340px;
-  justify-self: end;
+  max-width: 430px;
+  justify-self: start;
 }
 .hero-aside p {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
-  margin-bottom: 26px;
+  margin-bottom: 20px;
 }
 .hero-coach {
   display: block;
-  font-size: 8px;
-  letter-spacing: 0.12em;
-  margin-top: 15px;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  margin-top: 18px;
   color: #d5d9cf;
+}
+.hero-coach > span {
+  color: var(--orange);
+  padding: 0 6px;
 }
 .hero-bottom {
   position: absolute;
@@ -433,55 +447,37 @@ p {
 }
 .chapter-image {
   position: absolute;
-  inset: 0;
-  width: 100%;
+  top: 0;
+  right: 0;
+  width: 53%;
   height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
 }
 .chapter-bike .chapter-image {
-  object-position: 50% 42%;
+  object-position: 50% 80%;
 }
 .chapter-shade {
   position: absolute;
   inset: 0;
   background:
+    linear-gradient(90deg, #131917 47%, #131917dc 52%, #13191700 69%),
     linear-gradient(
       180deg,
-      #0d211b5c,
-      transparent 20%,
-      #0c171947 45%,
-      #0b181ded 100%
-    ),
-    linear-gradient(90deg, #10282966, transparent 75%);
-}
-.chapter-bike .chapter-shade {
-  background: linear-gradient(
-    180deg,
-    #19151055,
-    transparent 20%,
-    #151a1855 45%,
-    #151915ed 100%
-  );
-}
-.chapter-run .chapter-shade {
-  background: linear-gradient(
-    180deg,
-    #23170c55,
-    transparent 25%,
-    #191c1255 45%,
-    #15190ced 100%
-  );
+      #13191755,
+      transparent 25%,
+      #13191711 65%,
+      #131917 100%
+    );
 }
 .chapter-content {
   position: absolute;
   left: max(5.5vw, 24px);
-  right: max(5.5vw, 24px);
+  width: 43%;
   bottom: 125px;
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 20px;
-  align-items: end;
+  grid-template-columns: 1fr;
+  gap: 24px;
 }
 .chapter-kicker {
   grid-column: 1/-1;
@@ -496,7 +492,7 @@ p {
   color: #fa945f;
 }
 .chapter-title {
-  font-size: clamp(95px, 10.5vw, 170px);
+  font-size: clamp(86px, 9.2vw, 150px);
   line-height: 0.85;
   letter-spacing: -0.01em;
 }
@@ -504,8 +500,8 @@ p {
   color: var(--orange);
 }
 .chapter-copy {
-  justify-self: end;
-  max-width: 335px;
+  justify-self: start;
+  max-width: 370px;
   padding-bottom: 6px;
 }
 .chapter-copy h3 {
@@ -627,15 +623,14 @@ p {
 .coach-photo {
   position: relative;
   background: #b6ae99;
-  max-width: 470px;
+  max-width: 540px;
   overflow: hidden;
 }
 .coach-photo > img {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 3/4;
   object-fit: cover;
-  object-position: 50% 35%;
-  filter: saturate(0.65);
+  object-position: 50% 25%;
 }
 .photo-caption {
   display: block;
@@ -649,21 +644,21 @@ p {
   max-width: 470px;
 }
 .coach-content h2 {
-  font-size: clamp(52px, 5.8vw, 85px);
-  margin-bottom: 28px;
+  font-size: clamp(65px, 7vw, 105px);
+  margin-bottom: 20px;
 }
 .coach-content h2 span {
   color: #7b826f;
 }
-.coach-name {
-  font-size: 22px;
-  line-height: 1.3;
-  font-weight: 600;
-}
 .coach-role {
-  font-size: 11px;
+  font-size: 12px;
   color: #656c61;
-  margin: 5px 0 24px;
+  margin: 0 0 24px;
+}
+.coach-belief {
+  font-size: 21px;
+  line-height: 1.4;
+  margin-bottom: 14px;
 }
 .coach-achievements {
   padding: 0;
@@ -934,19 +929,25 @@ p {
 }
 .contact-avatar {
   background: #cdd2c1;
-  color: #4f5e3e;
-  font-family: var(--display);
-  font-size: 22px;
-  width: 44px;
-  height: 44px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--paper);
+}
+.contact-avatar img {
+  position: absolute;
+  width: 300%;
+  max-width: none;
+  height: auto;
+  left: -100%;
+  top: -53%;
 }
 .contact-coach strong {
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   display: block;
 }
 .contact-coach div span {
@@ -1173,11 +1174,11 @@ p {
   }
 }
 @media (max-width: 1100px) {
-  .hero-content {
-    grid-template-columns: 1.6fr 1fr;
+  .hero-image {
+    width: 58%;
   }
   .hero h1 {
-    font-size: 12vw;
+    font-size: 10.4vw;
   }
   .hero-aside p {
     font-size: 15px;
@@ -1232,7 +1233,7 @@ p {
     gap: 5vw;
   }
   .chapter-title {
-    font-size: 12vw;
+    font-size: 10.7vw;
   }
   .chapter-copy {
     max-width: 285px;
@@ -1292,11 +1293,24 @@ p {
     font-size: 15px;
   }
   .hero {
-    min-height: 680px;
+    min-height: 800px;
     max-height: 1100px;
   }
   .hero-image {
-    object-position: 52% 40%;
+    top: 78px;
+    width: 100%;
+    height: 60%;
+    object-position: 50% 24%;
+  }
+  .hero-shade {
+    background: linear-gradient(
+      180deg,
+      #171d1955,
+      transparent 24%,
+      #171d191a 35%,
+      #171d19e8 53%,
+      #171d19 65%
+    );
   }
   .hero-topline {
     top: 108px;
@@ -1312,29 +1326,32 @@ p {
   }
   .hero-content {
     grid-template-columns: 1fr;
-    gap: 24px;
-    bottom: 109px;
+    gap: 18px;
+    bottom: 100px;
+    width: auto;
+    right: 24px;
   }
   .hero h1 {
-    font-size: clamp(73px, 14.3vw, 115px);
+    font-size: clamp(66px, 17.5vw, 112px);
   }
   .hero-pretitle {
     font-size: 8px;
-    margin-bottom: 14px;
+    margin-bottom: 6px;
+  }
+  .hero-coach-name {
+    font-size: clamp(30px, 8.2vw, 48px);
+    margin-bottom: 20px;
   }
   .hero-aside {
     justify-self: start;
     max-width: none;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 14px;
+    display: block;
   }
   .hero-aside p {
     font-size: 13px;
     line-height: 1.6;
-    margin-bottom: 0;
+    margin-bottom: 17px;
   }
   .hero-aside .button {
     min-height: 48px;
@@ -1343,9 +1360,8 @@ p {
     gap: 17px;
   }
   .hero-coach {
-    grid-column: 1/-1;
     font-size: 7px;
-    margin-top: 0;
+    margin-top: 15px;
   }
   .hero-bottom {
     bottom: 22px;
@@ -1408,20 +1424,44 @@ p {
     height: 280lvh;
   }
   .chapter {
-    min-height: 750px;
+    min-height: 780px;
     height: 100svh;
+  }
+  .chapter-image {
+    top: 72px;
+    width: 100%;
+    height: 61%;
+    object-position: 50% 45%;
+  }
+  .chapter-bike .chapter-image {
+    object-position: 50% 85%;
+  }
+  .chapter-run .chapter-image {
+    object-position: 50% 24%;
+  }
+  .chapter-shade {
+    background: linear-gradient(
+      180deg,
+      #131917 4%,
+      #13191700 18%,
+      #13191700 38%,
+      #131917e8 59%,
+      #131917 70%
+    );
   }
   .chapter-content {
     grid-template-columns: 1fr;
-    gap: 22px;
-    bottom: 108px;
+    gap: 14px;
+    bottom: 100px;
+    width: auto;
+    right: 24px;
   }
   .chapter-kicker {
     margin-bottom: 2px;
     font-size: 9px;
   }
   .chapter-title {
-    font-size: clamp(78px, 15vw, 118px);
+    font-size: clamp(66px, 18vw, 106px);
     line-height: 0.85;
   }
   .chapter-copy {
@@ -1440,7 +1480,7 @@ p {
   }
   .chapter-meta {
     font-size: 7px;
-    margin-top: 18px;
+    margin-top: 14px;
   }
   .story-top {
     top: 24px;
@@ -1481,17 +1521,14 @@ p {
     max-width: 540px;
   }
   .coach-photo > img {
-    aspect-ratio: 1.03;
-    object-position: 50% 38%;
+    aspect-ratio: 4/5;
+    object-position: 50% 20%;
   }
   .coach-content h2 {
-    font-size: 64px;
+    font-size: clamp(64px, 17vw, 90px);
   }
   .coach-content {
     max-width: 550px;
-  }
-  .coach-name {
-    font-size: 21px;
   }
   .coach-role {
     font-size: 11px;
@@ -1659,15 +1696,8 @@ p {
   }
 }
 @media (max-width: 420px) {
-  .hero h1 {
-    font-size: 14.6vw;
-  }
-  .hero-aside {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
   .hero-aside p {
-    font-size: 14px;
+    font-size: 13px;
   }
   .hero-aside .button {
     justify-self: start;
@@ -1676,11 +1706,6 @@ p {
   }
   .hero-coach {
     font-size: 6.7px;
-    margin-top: 0;
-  }
-  .hero-content {
-    bottom: 100px;
-    gap: 23px;
   }
   .hero-topline .eyebrow {
     font-size: 7px;
@@ -1718,11 +1743,8 @@ p {
   .process-section h2 {
     font-size: 48px;
   }
-  .chapter-title {
-    font-size: 21vw;
-  }
   .chapter-content {
-    gap: 20px;
+    gap: 14px;
   }
   .chapter-copy p {
     font-size: 12px;
@@ -1734,15 +1756,47 @@ p {
   }
   .hero-content {
     bottom: 110px;
+    gap: 20px;
   }
   .hero h1 {
-    font-size: clamp(85px, 9vw, 130px);
+    font-size: clamp(78px, 8vw, 120px);
+  }
+  .hero-coach-name {
+    font-size: clamp(30px, 3vw, 48px);
+    margin-bottom: 16px;
   }
   .chapter-content {
     bottom: 108px;
   }
   .chapter-title {
-    font-size: clamp(85px, 9vw, 125px);
+    font-size: clamp(72px, 8vw, 120px);
+  }
+}
+@media (max-height: 740px) and (max-width: 760px) {
+  .chapter-image {
+    top: 62px;
+    height: 56%;
+  }
+  .chapter-swim .chapter-image {
+    object-position: 50% 85%;
+  }
+  .chapter-content {
+    bottom: 86px;
+    gap: 10px;
+  }
+  .chapter-title {
+    font-size: 60px;
+  }
+  .chapter-copy h3 {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .chapter-copy p {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  .chapter-meta {
+    margin-top: 10px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1761,24 +1815,8 @@ p {
   }
   .chapter {
     height: auto;
-    min-height: 700px;
+    min-height: 780px;
   }
-}
-
-/* Display only the photograph region of the supplied poster. */
-.coach-portrait {
-  position: relative;
-  aspect-ratio: 4/3;
-  overflow: hidden;
-}
-.coach-portrait > img {
-  position: absolute;
-  top: -68%;
-  left: -36%;
-  width: 175%;
-  max-width: none;
-  height: auto;
-  filter: saturate(0.75);
 }
 
 .text-link {

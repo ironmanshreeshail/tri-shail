@@ -1,4 +1,20 @@
-# Local verification — 14 October 2026
+# Website verification
+
+## Coach branding revision — 15 October 2026
+
+The current deployed website is preserved in GitHub commit `761cd53` on `master`. The branding revision is local and saved separately on `codex/coach-branding`; these checks do not imply it has been deployed.
+
+- Production build and TypeScript compilation pass. The eight existing backend tests passed when saving the deployed checkpoint; this revision does not change the backend.
+- Shreeshail’s authentic running portrait replaces the stock hero. His swim, bike, and run photos replace the three cinematic scenes. His name is prominent in the opening and biography, and a face portrait replaces the enquiry initials.
+- Source photos are retained outside the public directory. The largest served WebP variants are approximately 60 KiB (run), 45 KiB (bike), and 70 KiB (swim). Smaller 320/480 px variants use their actual source widths, with no enlargement.
+- Chromium checks at 360×800, 390×844, 375×667, 768×1024, 1024×768, 1366×900, 1920×1080, and 812×375 found no horizontal document overflow or broken images. Hero, biography, contact, and swim/bike/run crops were visually inspected on desktop and phone; a compact-height rule keeps the face above the story text on shorter phones.
+- All three animated chapters were reached with matching navigation on desktop and phone. Pausing kept the story height at 2363 px and changed the measured scroll position by 1 px. Reduced-motion emulation restored three visible, flowing chapters.
+- A fresh axe scan reported zero WCAG 2 A/AA, WCAG 2.1 A/AA, or WCAG 2.2 AA violations in the tested mobile state.
+- The local mobile Lighthouse audit scored 98 performance, 100 accessibility, and 100 best practices: approximately 2.5 s LCP, 0.9 s FCP, 10 ms total blocking time, zero layout shift, and 304 KiB transferred. Reports: `output/lighthouse-coach.report.html` and `.json`. These are laboratory measurements of the local preview; they do not establish live or physical-device performance.
+
+Physical iPhone/iPad, Android, and macOS Safari checks remain open. The historic deployment and initial-design measurements below describe the previous design.
+
+## Initial design — 14 October 2026
 
 The initial checks below used exported production pages and the Cloudflare Worker/D1 development runtime. Cloudflare was subsequently connected on 14 October 2026, and a review version was deployed at https://tri-shail.ironman-shreeshail.workers.dev/.
 

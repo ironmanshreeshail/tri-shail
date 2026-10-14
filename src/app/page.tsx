@@ -1,6 +1,7 @@
 import { Header } from "@/components/header";
 import { Arrow, Brand, SportIcon } from "@/components/icons";
 import { Photo } from "@/components/media";
+import { CoachPhoto } from "@/components/coach-photo";
 import { Journey } from "@/components/journey";
 import { EnquiryForm } from "@/components/enquiry-form";
 import { ProgrammeLink } from "@/components/programme-link";
@@ -12,12 +13,11 @@ export default function Home() {
       <Header />
       <main id="main">
         <section className="hero" aria-labelledby="hero-heading">
-          <Photo
-            name="hero"
+          <CoachPhoto
+            sport="run"
             className="hero-image"
-            alt="A runner heading towards the mountains on an open road"
+            alt="Coach Shreeshail Janagond on the run during an Ironman race"
             eager
-            fullBleed
           />
           <div className="hero-shade" />
           <div className="hero-topline">
@@ -30,7 +30,8 @@ export default function Home() {
           </div>
           <div className="hero-content">
             <div>
-              <p className="hero-pretitle">BIG GOALS. HUMAN COACHING.</p>
+              <p className="hero-pretitle">TRAIN WITH</p>
+              <p className="hero-coach-name">SHREESHAIL JANAGOND</p>
               <h1 id="hero-heading">
                 YOUR NEXT
                 <br />
@@ -39,14 +40,15 @@ export default function Home() {
             </div>
             <div className="hero-aside">
               <p>
-                It starts with a little belief.
-                <br />
-                And a plan to go the distance.
+                Your ambition. His experience.
+                <br />A plan to go the distance, together.
               </p>
               <a href="#contact" className="button button-orange">
-                Start your journey <Arrow diagonal />
+                Train with Shreeshail <Arrow diagonal />
               </a>
-              <span className="hero-coach">WITH COACH SHREESHAIL JANAGOND</span>
+              <span className="hero-coach">
+                CERTIFIED TRIATHLON COACH <span>·</span> 2× IRONMAN FINISHER
+              </span>
             </div>
           </div>
           <div className="hero-bottom">
@@ -54,9 +56,9 @@ export default function Home() {
               SCROLL TO FIND YOUR STRIDE <span>↓</span>
             </a>
             <span>
-              ONE ATHLETE. THREE DISCIPLINES.
+              TRI-SHAIL PERFORMANCE COACHING
               <br />
-              ENDLESS POSSIBILITY.
+              FOUNDED BY SHREESHAIL JANAGOND.
             </span>
           </div>
         </section>
@@ -115,7 +117,8 @@ export default function Home() {
               <p className="muted">
                 Whether you’re taking your first steps into triathlon or looking
                 towards an Ironman, Tri-Shail is about building towards your
-                goal with purpose, patience, and a coach who has been there.
+                goal with purpose, patience, and Shreeshail’s experience by your
+                side.
               </p>
               <a className="text-link" href="#journey">
                 Discover the journey <Arrow diagonal />
@@ -126,36 +129,26 @@ export default function Home() {
         <Journey />
         <section id="coach" className="coach-section section-padding">
           <div className="coach-photo">
-            <div className="coach-portrait">
-              <img
-                src="/media/coach.webp"
-                alt="Coach Shreeshail Janagond holding the Indian flag at an Ironman finish"
-                width="825"
-                height="1238"
-                loading="lazy"
-              />
-            </div>
-            <span className="photo-caption">
-              SHREESHAIL JANAGOND / AT THE FINISH LINE
-            </span>
+            <CoachPhoto
+              sport="run"
+              alt="Shreeshail Janagond racing in his Tri-Shail kit"
+              sizes="(max-width: 760px) calc(100vw - 48px), 42vw"
+            />
+            <span className="photo-caption">YOUR COACH. IN HIS ELEMENT.</span>
           </div>
           <div className="coach-content">
             <span className="eyebrow section-label">
               <span className="label-line" /> MEET YOUR COACH
             </span>
             <h2>
-              HE’S BEEN
+              SHREESHAIL
               <br />
-              <span>
-                WHERE YOU’RE
-                <br />
-                GOING.
-              </span>
+              <span>JANAGOND.</span>
             </h2>
-            <p className="coach-name">Shreeshail Janagond</p>
             <p className="coach-role">
               Founder & Coach, Tri-Shail Performance Coaching
             </p>
+            <p className="coach-belief">A coach who’s been the distance.</p>
             <p className="muted">
               Two Ironman finishes. A sub-12-hour personal best. The early
               mornings, the long training days, and the finish-line feeling.
@@ -177,7 +170,7 @@ export default function Home() {
               </li>
             </ul>
             <a href="#contact" className="text-link">
-              Talk about your next goal <Arrow diagonal />
+              Talk to Shreeshail <Arrow diagonal />
             </a>
           </div>
         </section>
@@ -309,12 +302,14 @@ export default function Home() {
               <span>FINISH LINE?</span>
             </h2>
             <p>
-              Tell us what you’re working towards.
+              Tell Shreeshail what you’re working towards.
               <br />
               Let’s start a conversation about getting there.
             </p>
             <div className="contact-coach">
-              <span className="contact-avatar">SJ</span>
+              <span className="contact-avatar">
+                <CoachPhoto sport="run" alt="" sizes="216px" />
+              </span>
               <div>
                 <strong>Coach Shreeshail Janagond</strong>
                 <span>Tri-Shail Performance Coaching</span>

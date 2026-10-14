@@ -52,12 +52,6 @@ for (const [name, url] of Object.entries(photos)) {
     );
   }
 }
-await sharp(
-  "/var/folders/86/dw4vt9210q3fy759kwrqtj100000gn/T/codex-clipboard-6ace604e-eb04-4b2a-a7eb-1c436d73d2cf.png",
-)
-  .resize({ width: 825 })
-  .webp({ quality: 85 })
-  .toFile("public/media/coach.webp");
 // Self-host the font; no third-party font requests at runtime.
 const glyphs =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,!?:;/-&";

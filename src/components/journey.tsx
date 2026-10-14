@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { chapters } from "@/content/site";
-import { Photo } from "./media";
+import { CoachPhoto } from "./coach-photo";
 import { SportIcon, Arrow } from "./icons";
 
 export function Journey() {
@@ -177,7 +177,9 @@ export function Journey() {
     >
       <div className="journey-viewport">
         <div className="story-top">
-          <span className="eyebrow">THREE DISCIPLINES. ONE JOURNEY.</span>
+          <span className="eyebrow">
+            SHREESHAIL’S WORLD. YOUR NEXT CHAPTER.
+          </span>
           <button
             className="motion-toggle"
             onClick={toggleMotion}
@@ -193,11 +195,10 @@ export function Journey() {
             id={chapter.id}
             key={chapter.id}
           >
-            <Photo
-              name={chapter.id}
+            <CoachPhoto
+              sport={chapter.id}
               className="chapter-image"
               alt={chapter.alt}
-              fullBleed
             />
             <div className="chapter-shade" />
             <div className="chapter-content">

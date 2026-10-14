@@ -62,8 +62,7 @@ export const chapters = [
     description:
       "Settle into a rhythm. Build your technique, find your confidence, and make the first discipline your foundation.",
     meta: "TECHNIQUE · CONFIDENCE · CONSISTENCY",
-    alt: "An athlete swimming through open blue water",
-    position: "50% 50%",
+    alt: "Shreeshail Janagond swimming in open water with a bright orange safety buoy",
   },
   {
     id: "bike",
@@ -74,8 +73,7 @@ export const chapters = [
     description:
       "Endurance grows with consistency. Bring intention to your riding and learn to keep something in reserve for the road ahead.",
     meta: "ENDURANCE · PACING · PROGRESSION",
-    alt: "Road cyclists leaning into a turn",
-    position: "50% 50%",
+    alt: "Shreeshail Janagond training on his road bike",
   },
   {
     id: "run",
@@ -86,10 +84,9 @@ export const chapters = [
     description:
       "Find the rhythm that carries you forward. Prepare for the run, the race, and the feeling of crossing your next finish line.",
     meta: "RHYTHM · RESILIENCE · RACE PREPARATION",
-    alt: "An athlete running on a road in warm evening light",
-    position: "50% 50%",
+    alt: "Shreeshail Janagond running during an Ironman race in his Tri-Shail kit",
   },
-];
+] as const;
 export const faqs = [
   {
     question: "Do I need to be an experienced triathlete?",

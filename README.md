@@ -4,6 +4,8 @@ A responsive triathlon coaching website with a cinematic swim → bike → run s
 
 Hosted review version: [tri-shail.ironman-shreeshail.workers.dev](https://tri-shail.ironman-shreeshail.workers.dev/). Cloudflare Free hosting and the production D1 database are connected. Search indexing is disabled pending final content and privacy-policy details.
 
+The deployed design is backed up in commit `761cd53` on `master`. The coach branding revision is on `codex/coach-branding` and can be reviewed locally at `http://localhost:8787`; it has not yet been deployed. GitHub remote: `git@github.com:ironmanshreeshail/tri-shail.git`.
+
 ## Local preview with a working backend
 
 Use Node.js 22.13+ (Node 24 LTS recommended) and npm.
@@ -36,7 +38,7 @@ npm test
 - Server validation: `worker/validation.ts`.
 - Submission handling and rate limiting: `worker/index.ts`.
 
-Sport photos are illustrative, with credits on `/credits/`. The coach photo is displayed through a CSS crop of the supplied poster. Prefer an original coach photograph when available. All images and fonts are self-hosted. The current story uses photography with scroll-driven movement and crossfades; video and 3D are not dependencies.
+The opening portrait and cinematic swim, bike, run sequence use Shreeshail’s supplied photographs. Originals are retained in `assets/coach/`; run `npm run media:coach` to regenerate their compressed WebP variants. `src/components/coach-photo.tsx` records the actual source dimensions and responsive widths. The programme cards still use illustrative sport photography, with credits on `/credits/`. All images and fonts are self-hosted. The story uses photography with scroll-driven movement and crossfades; video and 3D are not dependencies.
 
 ## Inspect local enquiries
 

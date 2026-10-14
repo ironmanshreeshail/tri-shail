@@ -3,11 +3,11 @@ import { site } from "@/content/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Tri-Shail — Your next finish line starts here",
+  title: `Tri-Shail — Train with ${site.coach}`,
   description: site.description,
   icons: { icon: "/favicon.svg" },
   openGraph: {
-    title: "Tri-Shail Performance Coaching",
+    title: `Tri-Shail — Train with ${site.coach}`,
     description: site.description,
     type: "website",
   },

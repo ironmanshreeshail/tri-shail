@@ -8,6 +8,7 @@
     "preview": "wrangler dev --port 8787",
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "media:coach": "node scripts/prepare-coach-media.mjs",
     "db:local": "wrangler d1 migrations apply tri-shail-enquiries --local",
     "deploy": "npm run build && wrangler deploy"
   },

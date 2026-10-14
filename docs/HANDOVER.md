@@ -35,17 +35,19 @@ Same-origin JSON submissions only, bounded 12 KB payload, schema validation, hid
 
 ## Media
 
-The built image files are committed to make builds independent of third-party availability. Change `scripts/prepare-media.mjs` when replacing sources, and regenerate the appropriate variants. Existing image files are skipped; remove only the relevant generated variant set when deliberately replacing an image. The attachment path in that script is specific to this development session; point it at your retained coach original for future regeneration. It is not required for normal builds.
+The built image files are committed to make builds independent of third-party availability. The supplied coach photographs are retained in `assets/coach/`, outside the public asset directory. Run `npm run media:coach` to generate their WebP variants; when changing originals, update the dimensions in `src/components/coach-photo.tsx`. Variants never enlarge the original photos, and responsive descriptors use their actual widths. Desktop scenes put the photograph beside the copy; mobile scenes use a portrait crop with copy below the face.
+
+`scripts/prepare-media.mjs` prepares the illustrative programme photographs and fonts. The obsolete temporary attachment dependency has been removed. Generated images and fonts are already committed; neither media script is required for ordinary builds.
 
 Use short, compressed media and keep one visible moving scene. Preserve image dimensions, responsive sources, and the reduced-motion layout. If adding video, include still posters, playback/error fallbacks, offscreen pause, and device-specific sources. Keep the initial mobile load within the plan's budget.
 
 Photography sources:
 
-- Hero: Andrea Leopardi, https://unsplash.com/photos/person-running-on-road-at-daytime-QVD3Xht9txA
-- Swim: billow926, https://unsplash.com/photos/person-swimming-on-blue-sea-during-daytime-aezJk92dIsM
-- Bike: charlie dt, https://unsplash.com/photos/cyclists-race-on-a-road-with-motion-blur-XmlEVg-1nRk
-- Run: Laura Ghise, https://unsplash.com/photos/unknown-person-running-on-road-5DykCHKRm5Q
-- Coach: user-supplied poster, displayed using a CSS crop; authenticity is preserved.
+- Opening, cinematic swim/bike/run scenes, biography, enquiry avatar: user-supplied photographs of Shreeshail Janagond. No photographer attribution was supplied.
+- Programme mountain running: Andrea Leopardi, https://unsplash.com/photos/person-running-on-road-at-daytime-QVD3Xht9txA
+- Programme swim: billow926, https://unsplash.com/photos/person-swimming-on-blue-sea-during-daytime-aezJk92dIsM
+- Programme bike: charlie dt, https://unsplash.com/photos/cyclists-race-on-a-road-with-motion-blur-XmlEVg-1nRk
+- Programme running: Laura Ghise, https://unsplash.com/photos/unknown-person-running-on-road-5DykCHKRm5Q
 - Barlow Condensed: Google Fonts, SIL Open Font License; local subset files.
 
 ## Rollback and costs
