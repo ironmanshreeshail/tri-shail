@@ -667,22 +667,76 @@ p {
   line-height: 1.4;
   margin-bottom: 14px;
 }
-.coach-achievements {
-  padding: 0;
-  margin: 27px 0;
-  list-style: none;
+.coach-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 22px 0;
+  margin-top: 10px;
 }
-.coach-achievements li {
+.coach-details span,
+.coach-results-label {
+  display: block;
+  font-family: var(--body);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  font-weight: 400;
+  color: #5e6757;
+}
+.coach-details strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 5px;
+}
+.coach-details p {
+  font-size: 11px;
+  color: #656c61;
+  margin-top: 2px;
+}
+.coach-results-label {
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.coach-results {
+  margin: 8px 0 0;
+}
+.coach-results > div {
   font-size: 12px;
   padding: 11px 0;
   border-bottom: 1px solid var(--line);
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 16px;
 }
-.coach-achievements li span {
-  font-size: 8px;
-  color: #606c56;
+.coach-results dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.coach-source {
+  font-size: 10px;
+  margin-top: 9px;
+  color: #656c61;
+}
+.coach-source a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 4px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.coach-extra-credentials {
+  font-size: 11px;
+  color: #656c61;
+  margin: 9px 0 22px;
+}
+.programme-support {
+  font-size: 12px;
+  color: #60675b;
+  margin: -16px 0 30px;
 }
 .programmes-section {
   background: #e6e8df;
@@ -1540,9 +1594,6 @@ p {
   }
   .coach-role {
     font-size: 11px;
-  }
-  .coach-achievements li {
-    font-size: 12px;
   }
   .section-heading {
     flex-direction: column;

@@ -37,6 +37,10 @@ Use SQL parameters for application changes. D1 exports contain personal informat
 
 Same-origin JSON submissions only, bounded 12 KB payload, schema validation, hidden honeypot, and a durable limit of five new valid submissions per source per hour. The database stores only a salted hash of the network source/window, not raw IP addresses. Counters expire and are cleaned on successful submissions. Idempotent retries do not create duplicate records. This is basic abuse control; enable server-verified Turnstile if real spam requires stronger protection. Requests and blocked attempts still consume Cloudflare allowances.
 
+## Coach profile source
+
+RunOrbit supplied the Sangli location, work/training context, coaching modes/languages, and named race results: https://runorbit.in/runorbit_services/shreeshail/. The local profile draft is on `codex/coach-profile` and is not deployed. Pricing, counts, and the specific certification provider remain unconfirmed. The injury-free guarantee was not adopted. All profile copy and results are maintained in `src/content/site.ts`.
+
 ## Media
 
 The built image files are committed to make builds independent of third-party availability. The supplied coach photographs are retained in `assets/coach/`, outside the public asset directory. Run `npm run media:coach` to generate their WebP variants; when changing originals, update the dimensions in `src/components/coach-photo.tsx`. Variants never enlarge the original photos, and responsive descriptors use their actual widths. Desktop scenes put the photograph beside the copy; mobile scenes use a portrait crop with copy below the face.

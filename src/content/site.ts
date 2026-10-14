@@ -10,6 +10,21 @@ export const credentials = [
   { value: "SUB 12", label: "Ironman personal best" },
   { value: "1×", label: "Ironman 70.3 finisher" },
 ];
+export const coachProfile = {
+  biography:
+    "Based in Sangli, Maharashtra, Shreeshail balances a full-time career with endurance sport. He brings that understanding to personalised coaching for athletes fitting training around work and everyday life—from a first triathlon to the demands of Ironman.",
+  formats: "Online & in person",
+  location: "Sangli, Maharashtra",
+  languages: "Marathi · English · Hindi",
+  focus: "Personalised training · Strength and conditioning",
+  source: "https://runorbit.in/runorbit_services/shreeshail/",
+  raceResults: [
+    { event: "Ironman Copenhagen", time: "11:54:33" },
+    { event: "Ironman Gurye, Korea", time: "13:46:12" },
+    { event: "Ironman 70.3 Goa", time: "6:33:46" },
+    { event: "Tata Mumbai Marathon", time: "3:58:47" },
+  ],
+};
 export const programmes = [
   {
     number: "01",
@@ -88,6 +103,11 @@ export const chapters = [
   },
 ] as const;
 export const faqs = [
+  {
+    question: "Where can I train with Shreeshail?",
+    answer:
+      "Coaching is available online and in person in Sangli, with communication in Marathi, English, or Hindi. Share your location and preferred language in your enquiry.",
+  },
   {
     question: "Do I need to be an experienced triathlete?",
     answer:

@@ -1,5 +1,9 @@
 # Website verification
 
+## Local coach profile draft — 15 October 2026
+
+The sourced content draft is on `codex/coach-profile` and has not been deployed. Production build and TypeScript compilation pass. Chromium checks at 360×800, 768×1024, and 1366×900 found no horizontal overflow; the expanded biography and race table were visually reviewed on phone and desktop. The new FAQ opens correctly. An axe scan with the FAQ open reported zero WCAG A/AA violations in the tested state. These checks cover the content/layout edit; the existing cinematic and backend implementation were not changed.
+
 ## Smaller-phone cinematic correction — 15 October 2026
 
 The correction (`2c01d83`) is deployed as Cloudflare version `ba9de95d-6fd1-4f41-8fd4-6a8d69425b4a` and included on `master`.

@@ -5,7 +5,13 @@ import { CoachPhoto } from "@/components/coach-photo";
 import { Journey } from "@/components/journey";
 import { EnquiryForm } from "@/components/enquiry-form";
 import { ProgrammeLink } from "@/components/programme-link";
-import { credentials, programmes, faqs, site } from "@/content/site";
+import {
+  coachProfile,
+  credentials,
+  programmes,
+  faqs,
+  site,
+} from "@/content/site";
 
 export default function Home() {
   return (
@@ -148,27 +154,43 @@ export default function Home() {
             <p className="coach-role">
               Founder & Coach, Tri-Shail Performance Coaching
             </p>
-            <p className="coach-belief">A coach who’s been the distance.</p>
-            <p className="muted">
-              Two Ironman finishes. A sub-12-hour personal best. The early
-              mornings, the long training days, and the finish-line feeling.
-              Shreeshail brings his own endurance journey to the conversation
-              about yours.
+            <p className="coach-belief">Big goals. Real-life schedules.</p>
+            <p className="muted">{coachProfile.biography}</p>
+            <div className="coach-details">
+              <div>
+                <span>COACHING</span>
+                <strong>{coachProfile.formats}</strong>
+                <p>{coachProfile.location}</p>
+              </div>
+              <div>
+                <span>LET’S TALK</span>
+                <strong>{coachProfile.languages}</strong>
+              </div>
+            </div>
+            <h3 className="coach-results-label">RACE HIGHLIGHTS</h3>
+            <dl className="coach-results">
+              {coachProfile.raceResults.map((race) => (
+                <div key={race.event}>
+                  <dt>{race.event}</dt>
+                  <dd>{race.time}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="coach-source">
+              Results listed on his{" "}
+              <a
+                href={coachProfile.source}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                RunOrbit profile <span aria-hidden="true">↗</span>
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
             </p>
-            <ul className="coach-achievements">
-              <li>
-                <span>01</span> Certified Triathlon Coach
-              </li>
-              <li>
-                <span>02</span> Sub-4-hour Tata Mumbai Marathon finisher
-              </li>
-              <li>
-                <span>03</span> Official sub-2-hour half-marathon pacer
-              </li>
-              <li>
-                <span>04</span> Multiple half-marathon & 25 km finishes
-              </li>
-            </ul>
+            <p className="coach-extra-credentials">
+              Official sub-2-hour half-marathon pacer · Multiple half-marathon &
+              25 km finishes
+            </p>
             <a href="#contact" className="text-link">
               Talk to Shreeshail <Arrow diagonal />
             </a>
@@ -192,6 +214,7 @@ export default function Home() {
               Let’s discuss how to get you there.
             </p>
           </div>
+          <p className="programme-support">{coachProfile.focus}</p>
           <div className="programme-grid">
             {programmes.map((p) => (
               <article className="programme-card" key={p.number}>
@@ -312,7 +335,9 @@ export default function Home() {
               </span>
               <div>
                 <strong>Coach Shreeshail Janagond</strong>
-                <span>Tri-Shail Performance Coaching</span>
+                <span>
+                  {coachProfile.formats} · {coachProfile.location}
+                </span>
               </div>
             </div>
           </div>
