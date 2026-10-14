@@ -1,5 +1,13 @@
 # Website verification
 
+## Smaller-phone cinematic correction — 15 October 2026
+
+A report from iPhone Safari described all three photographs as separate flowing sections. A controlled WebKit reproduction at 375×559, with reduced motion off, confirmed that the deployed 600 px minimum-height media query prevented enhancement. The same viewport on the corrected local build enabled the sticky cinematic sequence without page JavaScript errors. This establishes a real compact-viewport defect; the reporting phone's exact model, iOS version, and motion preference are still unconfirmed.
+
+The animation gate and sticky viewport now allow heights of at least 480 px. Short landscape screens retain flowing chapters, and reduced-motion users keep the static layout with a visible explanation. Inactive motion controls are no longer shown. Standard `vh` declarations precede the newer viewport units as a CSS fallback. The compact cycling crop keeps the coach's face clear of the top controls.
+
+Three automated WebKit browser tests cover short portrait transitions and matching navigation, changing heights across 600 px, pause/resume without collapsing the track, reduced-motion handling, and the short-landscape layout. WebKit screenshots were inspected for all three chapters at 375×559. A separate desktop Chromium check reached all three animated chapters without horizontal overflow. These remain browser-engine checks, not a physical iPhone test.
+
 ## Coach branding revision — 15 October 2026
 
 The previous website is preserved in GitHub commit `761cd53`. The branding revision (`3825969`) was deployed on 15 October 2026 and included on `master`. Cloudflare version: `60413282-1959-4d8d-8af2-51251ce70a69`.

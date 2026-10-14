@@ -7,6 +7,9 @@ import { SportIcon, Arrow } from "./icons";
 export function Journey() {
   const root = useRef<HTMLElement>(null);
   const [paused, setPaused] = useState(false);
+  const [motionMode, setMotionMode] = useState<
+    "loading" | "cinematic" | "reduced" | "compact" | "unavailable"
+  >("loading");
   const pausedRef = useRef(false);
   const motionControl = useRef<((value: boolean) => void) | null>(null);
   useEffect(() => {
@@ -23,14 +26,30 @@ export function Journey() {
           import("gsap"),
           import("gsap/ScrollTrigger"),
         ]).catch(() => null);
-        if (!motion || cancelled) return;
+        if (cancelled) return;
+        if (!motion) {
+          setMotionMode("unavailable");
+          return;
+        }
         const [{ gsap }, { ScrollTrigger }] = motion;
         gsap.registerPlugin(ScrollTrigger);
         ScrollTrigger.config({ ignoreMobileResize: true });
         const media = gsap.matchMedia();
         media.add(
-          "(min-height: 600px) and (prefers-reduced-motion: no-preference)",
-          () => {
+          {
+            cinematic:
+              "(min-height: 480px) and (prefers-reduced-motion: no-preference)",
+            reduced: "(prefers-reduced-motion: reduce)",
+            compact: "(max-height: 479px)",
+          },
+          (context) => {
+            if (!context.conditions?.cinematic) {
+              setMotionMode(
+                context.conditions?.reduced ? "reduced" : "compact",
+              );
+              return;
+            }
+            setMotionMode("cinematic");
             element.classList.add("journey-enhanced");
             const panels = gsap.utils.toArray<HTMLElement>(".chapter", element);
             const images = gsap.utils.toArray<HTMLElement>(
@@ -172,6 +191,7 @@ export function Journey() {
     <section
       id="journey"
       className="journey"
+      data-motion-mode={motionMode}
       ref={root}
       aria-label="The swim, bike, run journey"
     >
@@ -180,14 +200,22 @@ export function Journey() {
           <span className="eyebrow">
             SHREESHAIL’S WORLD. YOUR NEXT CHAPTER.
           </span>
-          <button
-            className="motion-toggle"
-            onClick={toggleMotion}
-            aria-pressed={paused}
-          >
-            {paused ? "Enable" : "Pause"} motion{" "}
-            <span aria-hidden="true">{paused ? "▷" : "Ⅱ"}</span>
-          </button>
+          {motionMode === "cinematic" ? (
+            <button
+              className="motion-toggle"
+              onClick={toggleMotion}
+              aria-pressed={paused}
+            >
+              {paused ? "Enable" : "Pause"} motion{" "}
+              <span aria-hidden="true">{paused ? "▷" : "Ⅱ"}</span>
+            </button>
+          ) : motionMode !== "loading" ? (
+            <span className="motion-status" aria-live="polite">
+              {motionMode === "reduced"
+                ? "Reduced motion is on"
+                : "Scroll to explore"}
+            </span>
+          ) : null}
         </div>
         {chapters.map((chapter) => (
           <article

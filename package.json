@@ -8,6 +8,7 @@
     "preview": "wrangler dev --port 8787",
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "test:browser": "playwright test",
     "media:coach": "node scripts/prepare-coach-media.mjs",
     "db:local": "wrangler d1 migrations apply tri-shail-enquiries --local",
     "deploy": "npm run build && wrangler deploy"
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "latest",
+    "@playwright/test": "1.64.1",
     "@tailwindcss/postcss": "^4.1.0",
     "@types/node": "^25.0.0",
     "@types/react": "^19.0.0",

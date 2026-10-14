@@ -28,6 +28,15 @@ npm run typecheck
 npm test
 ```
 
+To check the mobile cinematic sequence in WebKit (Safari's engine), keep the production-style local preview running and use:
+
+```sh
+npx playwright install webkit
+npm run test:browser
+```
+
+The browser checks cover a short 375×559 iPhone viewport, height changes, chapter transitions, pause/resume, reduced motion, and the landscape fallback. Set `TRISHAIL_TEST_URL` to check another preview URL.
+
 ## Editing
 
 - Copy, credentials, FAQs, programme descriptions: `src/content/site.ts`.

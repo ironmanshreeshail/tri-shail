@@ -540,6 +540,11 @@ p {
   gap: 14px;
   align-items: center;
 }
+.motion-status {
+  color: #d4dbd1;
+  font-size: 10px;
+  align-self: center;
+}
 .story-bottom {
   position: absolute;
   bottom: 28px;
@@ -594,13 +599,15 @@ p {
   gap: 18px;
 }
 .journey-enhanced {
+  height: 340vh;
   height: 340lvh;
 }
 .journey-enhanced .journey-viewport {
   position: sticky;
   top: 0;
+  height: 100vh;
   height: 100svh;
-  min-height: 600px;
+  min-height: 480px;
   overflow: hidden;
 }
 .journey-enhanced .chapter {
@@ -1421,6 +1428,7 @@ p {
     margin-bottom: 24px;
   }
   .journey-enhanced {
+    height: 280vh;
     height: 280lvh;
   }
   .chapter {
@@ -1779,6 +1787,9 @@ p {
   }
   .chapter-swim .chapter-image {
     object-position: 50% 85%;
+  }
+  .chapter-bike .chapter-image {
+    object-position: 50% 60%;
   }
   .chapter-content {
     bottom: 86px;
